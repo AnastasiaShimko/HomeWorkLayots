@@ -9,9 +9,14 @@
 </head>
 <body>
 <header>
-    <div class="nav">
-        <div class="col-md-12 m-1" style="font-size: x-large;">
+    <div class="nav  navbar-expand">
+        <div class="col-md-9" style="font-size: x-large;">
             <a asp-area="" asp-controller="Home" asp-action="Index">Shop</a>
+        </div>
+        <div class="col-md-3 align-self-end">
+            <p class="m-2">
+                @await Html.PartialAsync("GetUserName")
+            </p>
         </div>
     </div> 
     

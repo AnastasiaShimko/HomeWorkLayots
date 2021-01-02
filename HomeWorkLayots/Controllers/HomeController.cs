@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace HomeWorkLayots.Controllers
 {
@@ -18,9 +19,20 @@ namespace HomeWorkLayots.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string name)
         {
-            return View();
+            IActionResult result = null;
+            if (!string.IsNullOrEmpty(name))
+            {
+                HttpContext.Session.SetString("UserName", name);
+                result = RedirectToAction(nameof(this.Index));
+            }
+            else
+            {
+                result = View();
+            }
+
+            return result;
         }
 
         public IActionResult Privacy()

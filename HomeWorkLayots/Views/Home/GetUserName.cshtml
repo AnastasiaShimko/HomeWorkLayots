@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@GetUserName()
+
+@functions
+{
+    public string GetUserName()
+    {
+        var result = "";
+        var name = Context.Session.GetString("UserName");
+        result = !string.IsNullOrEmpty(name) ? $"Hello, {name}" : string.Empty;
+        return result;
+    }
+}
