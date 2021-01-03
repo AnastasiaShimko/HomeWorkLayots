@@ -6,16 +6,19 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeWorkLayots.Data;
 using Microsoft.AspNetCore.Http;
 
 namespace HomeWorkLayots.Controllers
 {
     public class HomeController : Controller
     {
+        StoreContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, StoreContext context)
         {
+            db = context;
             _logger = logger;
         }
 
@@ -29,7 +32,7 @@ namespace HomeWorkLayots.Controllers
             }
             else
             {
-                result = View();
+                result = View(db.Categories.ToList());
             }
 
             return result;

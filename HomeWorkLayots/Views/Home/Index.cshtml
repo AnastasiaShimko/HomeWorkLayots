@@ -1,22 +1,23 @@
-﻿@{
+﻿@model IEnumerable<HomeWorkLayots.Data.Model.Category>
+@{
     ViewData["Title"] = "Shop";
 }
 <div class="row m-3">
     <div class="col-3 border border-dark ">
         <ul class="navbar-nav">
-            <li class="p-2"><a>Mobile Phone</a></li>
-            <li class="p-2"><a>Notebook</a></li>
-            <li class="p-2"><a>Camera</a></li>
-            <li class="p-2"><a>Headphones</a></li>
+            @foreach (var category in Model)
+            {
+                <li class="p-2"><a>@category.Name</a></li>
+            }
         </ul>
     </div>
     <div class="col-9 border text-sm-center">
         <div class="align-content-center">
-            <h6 >Set your name:</h6>
+            <h6>Set your name:</h6>
             <form method="post" action="/Home/Index">
                 <div class="text-center">
-                    <p><input type="text" name="name"/></p>
-                    <p><input type="submit" value="Submit"/></p>
+                    <p><input type="text" name="name" /></p>
+                    <p><input type="submit" value="Submit" /></p>
                 </div>
             </form>
         </div>
@@ -28,9 +29,9 @@
             <p>
                 Nunc elementum libero in risus venenatis consectetur. Praesent dictum volutpat leo quis dignissim. Morbi id sem nec magna congue fermentum quis ac purus. Nulla facilisi. Curabitur ullamcorper eu quam ut viverra. Vestibulum interdum velit nec pretium auctor. Curabitur nec tempus dui, sed semper tortor. Donec rutrum dui tortor, ac dapibus nulla consequat vitae. Nulla neque massa, mattis at ultrices et, commodo eu elit. Vestibulum nec mattis nisl. Praesent aliquam leo eleifend tortor efficitur condimentum. Ut cursus suscipit dolor a porta. Aliquam erat volutpat.
             </p>
-                <p>
-                    Cras in congue lorem, ut bibendum nibh. Aenean malesuada sollicitudin ipsum id aliquam. Morbi non nulla id ex rhoncus pellentesque. Sed lobortis odio sed magna viverra, at rutrum lectus rutrum. Cras lacinia tristique pulvinar. Morbi in molestie mauris. Phasellus tincidunt nisl nec dolor elementum hendrerit. Aenean lacinia iaculis turpis ut mattis.
-                </p>
+            <p>
+                Cras in congue lorem, ut bibendum nibh. Aenean malesuada sollicitudin ipsum id aliquam. Morbi non nulla id ex rhoncus pellentesque. Sed lobortis odio sed magna viverra, at rutrum lectus rutrum. Cras lacinia tristique pulvinar. Morbi in molestie mauris. Phasellus tincidunt nisl nec dolor elementum hendrerit. Aenean lacinia iaculis turpis ut mattis.
+            </p>
         </div>
     </div>
 </div>
