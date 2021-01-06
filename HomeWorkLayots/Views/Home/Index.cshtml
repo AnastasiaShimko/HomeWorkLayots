@@ -22,7 +22,9 @@
             </form>
         </div>
         <div>
-            <h3>Page Content</h3>
+            @{
+                <h3>@Model.First().Name</h3>
+            }
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec elementum nisl, in sodales nisl. In hac habitasse platea dictumst. Suspendisse hendrerit sapien metus, in porttitor elit ultricies sit amet. Fusce blandit rhoncus elementum. Etiam vitae facilisis ligula. Vestibulum a tempus ligula. Curabitur maximus enim leo, sit amet pharetra odio ultrices vel.
             </p>

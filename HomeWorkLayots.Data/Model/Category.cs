@@ -8,8 +8,6 @@ namespace HomeWorkLayots.Data.Model
 {
     public class Category
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
         public string Name { get; set; }
     }
