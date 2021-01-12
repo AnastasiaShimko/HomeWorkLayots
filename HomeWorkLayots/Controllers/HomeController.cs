@@ -6,16 +6,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeWorkLayots.Data;
+using HomeWorkLayots.Data.Interfaces;
 using Microsoft.AspNetCore.Http;
 
 namespace HomeWorkLayots.Controllers
 {
     public class HomeController : Controller
     {
+        private ICategoryRepository _categoryRepository;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICategoryRepository categoryRepository)
         {
+            _categoryRepository = categoryRepository;
             _logger = logger;
         }
 
@@ -29,7 +33,7 @@ namespace HomeWorkLayots.Controllers
             }
             else
             {
-                result = View();
+                result = View(_categoryRepository.GetCategories());
             }
 
             return result;

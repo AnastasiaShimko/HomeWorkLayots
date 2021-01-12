@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWorkLayots", "HomeWorkLayots\HomeWorkLayots.csproj", "{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkLayots", "HomeWorkLayots\HomeWorkLayots.csproj", "{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWorkLayots.Data", "HomeWorkLayots.Data\HomeWorkLayots.Data.csproj", "{DFD8DB1C-09AB-4299-B342-E1658F787F0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
