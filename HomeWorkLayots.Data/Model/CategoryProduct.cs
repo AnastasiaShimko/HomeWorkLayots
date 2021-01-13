@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Data.Linq.Mapping;
+
 
 namespace HomeWorkLayots.Data.Model
 {
+    [Table(Name = "CatalogGood")]
     public class CategoryProduct
     {
-        public int ID { get; set; }
-        public int ProductID { get; set; }
+        [Column(Name = "GoodID")]
+        public int GoodID { get; set; }
+        [Column(Name = "CatalogID")]
         public int CategoryID { get; set; }
     }
 }

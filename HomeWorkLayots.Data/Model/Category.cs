@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+﻿using System.Data.Linq.Mapping;
 
 namespace HomeWorkLayots.Data.Model
 {
+    [Table(Name = "Catalog")]
     public class Category
     {
+        [Column(IsPrimaryKey = true)]
         public int ID { get; set; }
+        [Column(Name = "Name")]
         public string Name { get; set; }
     }
 }

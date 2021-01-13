@@ -1,0 +1,15 @@
+﻿@model IEnumerable<HomeWorkLayots.Data.Model.Product>
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="col-12 border border-dark ">
+    <ul class="navbar-nav">
+        @foreach (var product in Model)
+        {
+            <h3 class="p-2">@product.Name</h3>
+            <p class="p-2">Price: @product.Price</p>
+            <p class="p-2">Company: @product.Company</p>
+        }
+    </ul>
+</div>

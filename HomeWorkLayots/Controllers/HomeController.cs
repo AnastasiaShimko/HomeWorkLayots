@@ -14,11 +14,13 @@ namespace HomeWorkLayots.Controllers
 {
     public class HomeController : Controller
     {
+        private IProductRepository _productRepository;
         private ICategoryRepository _categoryRepository;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ICategoryRepository categoryRepository)
+        public HomeController(ILogger<HomeController> logger, ICategoryRepository categoryRepository, IProductRepository productRepository)
         {
+            _productRepository = productRepository;
             _categoryRepository = categoryRepository;
             _logger = logger;
         }
@@ -37,6 +39,13 @@ namespace HomeWorkLayots.Controllers
             }
 
             return result;
+        }
+
+        [HttpGet]
+        public IActionResult Category(int categoryid)
+        {
+            var productsList = _productRepository.GetCategoryProducts(categoryid);
+            return View(productsList);
         }
 
         public IActionResult Privacy()
