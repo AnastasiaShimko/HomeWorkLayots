@@ -28,7 +28,8 @@ namespace HomeWorkLayots
         public void ConfigureServices(IServiceCollection services)
         {
             //string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddSingleton<ICategoryRepository, CategoryRepository>();
+            services.AddSingleton<IProductRepository, ProductLinqRepository>();
+            services.AddSingleton<ICategoryRepository, CategoryLinqRepository>(); 
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddSession();
