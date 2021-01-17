@@ -1,13 +1,12 @@
-﻿@model IEnumerable<HomeWorkLayots.Data.Model.Category>
-@{
+﻿@{
     ViewData["Title"] = "Shop";
 }
 <div class="row m-3">
     <div class="col-3 border border-dark ">
         <ul class="navbar-nav">
-            @foreach (var category in Model)
+            @foreach (var category in ViewBag.Categories)
             {
-                <li class="p-2"><a>@category.Name</a></li>
+                <li class="p-2"><a href="~/Home/Category?categoryid=@category.ID">@category.Name</a></li>
             }
         </ul>
     </div>
@@ -22,16 +21,15 @@
             </form>
         </div>
         <div>
-            <h3>Page Content</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec elementum nisl, in sodales nisl. In hac habitasse platea dictumst. Suspendisse hendrerit sapien metus, in porttitor elit ultricies sit amet. Fusce blandit rhoncus elementum. Etiam vitae facilisis ligula. Vestibulum a tempus ligula. Curabitur maximus enim leo, sit amet pharetra odio ultrices vel.
-            </p>
-            <p>
-                Nunc elementum libero in risus venenatis consectetur. Praesent dictum volutpat leo quis dignissim. Morbi id sem nec magna congue fermentum quis ac purus. Nulla facilisi. Curabitur ullamcorper eu quam ut viverra. Vestibulum interdum velit nec pretium auctor. Curabitur nec tempus dui, sed semper tortor. Donec rutrum dui tortor, ac dapibus nulla consequat vitae. Nulla neque massa, mattis at ultrices et, commodo eu elit. Vestibulum nec mattis nisl. Praesent aliquam leo eleifend tortor efficitur condimentum. Ut cursus suscipit dolor a porta. Aliquam erat volutpat.
-            </p>
-            <p>
-                Cras in congue lorem, ut bibendum nibh. Aenean malesuada sollicitudin ipsum id aliquam. Morbi non nulla id ex rhoncus pellentesque. Sed lobortis odio sed magna viverra, at rutrum lectus rutrum. Cras lacinia tristique pulvinar. Morbi in molestie mauris. Phasellus tincidunt nisl nec dolor elementum hendrerit. Aenean lacinia iaculis turpis ut mattis.
-            </p>
+            <h3>ViewBag.Categories.First().Name</h3>
+            @foreach (var product in ViewBag.FirstCategoryProducts)
+            {
+                <li>
+                    <h3 class="p-2">@product.Name</h3>
+                    <p class="p-2">Price: @product.Price</p>
+                    <p class="p-2">Company: @product.Company</p>
+                </li>
+            }
         </div>
     </div>
 </div>

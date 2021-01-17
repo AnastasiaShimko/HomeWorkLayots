@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="col-12 border border-dark ">
+    <ul class="navbar-nav">
+        @foreach (var product in ViewBag.Products)
+        {
+            <li>
+                <h3 class="p-2">@product.Name</h3>
+                <p class="p-2">Price: @product.Price</p>
+                <p class="p-2">Company: @product.Company</p>
+            </li>
+        }
+    </ul>
+</div>

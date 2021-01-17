@@ -9,10 +9,15 @@ namespace HomeWorkLayots.Data.Model
     public class Product
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Company { get; set; }
         public int Price { get; set; }
+        public ICollection<Category> Categories { get; set; }
+        public Product()
+        {
+            Categories = new List<Category>();
+        }
     }
 }

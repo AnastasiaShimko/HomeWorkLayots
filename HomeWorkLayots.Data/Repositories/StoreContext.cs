@@ -11,7 +11,6 @@ namespace HomeWorkLayots.Data
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<CategoryProduct> ProductsCategories { get; set; }
         public StoreContext(DbContextOptions<StoreContext> options)
             : base(options)
         {

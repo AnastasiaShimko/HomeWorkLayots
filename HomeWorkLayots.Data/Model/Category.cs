@@ -12,5 +12,10 @@ namespace HomeWorkLayots.Data.Model
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
         public string Name { get; set; }
+        public ICollection<Product> Products { get; set; }
+        public Category()
+        {
+            Products = new List<Product>();
+        }
     }
 }
