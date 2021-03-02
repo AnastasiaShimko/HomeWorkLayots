@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using HomeWorkLayots.Data.Model;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using HomeWorkLayots.Business.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HomeWorkLayots.Data

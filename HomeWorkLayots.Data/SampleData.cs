@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using HomeWorkLayots.Data.Model;
+﻿using HomeWorkLayots.Business.Models;
 
 namespace HomeWorkLayots.Data.Repositories
 { public static class SampleData

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeWorkLayots.Business.Interfaces;
 using HomeWorkLayots.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -14,12 +15,14 @@ namespace HomeWorkLayots.Controllers
 {
     public class HomeController : Controller
     {
-        StoreContext db;
+        private IProductRepository _productRepository;
+        private ICategoryRepository _categoryRepository;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, StoreContext context)
+        public HomeController(ILogger<HomeController> logger, IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            db = context;
+            _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
             _logger = logger;
         }
 
@@ -33,10 +36,9 @@ namespace HomeWorkLayots.Controllers
             }
             else
             {
-                ViewBag.Categories = db.Categories.ToList();
-                ViewBag.FirstCategoryProducts = from product in db.Products
-                                                where product.Categories.Any(c => c.ID == 1)
-                                                select product;
+                ViewBag.Categories = _categoryRepository.GetAllCategories();
+                ViewBag.FirstCategoryProducts = _productRepository.GetFirstCategoryProducts();
+                ViewBag.FirstCategoryName = _categoryRepository.GetFirstCategoryName();
                 result = View();
             }
 
@@ -61,9 +63,7 @@ namespace HomeWorkLayots.Controllers
         [HttpGet]
         public IActionResult Category(int categoryid)
         {
-            ViewBag.Products = from product in db.Products
-                                                where product.Categories.Any(c => c.ID == categoryid)
-                                                select product;
+            ViewBag.Products = _productRepository.GetProductsByCategory(categoryid);
             return View();
         }
 

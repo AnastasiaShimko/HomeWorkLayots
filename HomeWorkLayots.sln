@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkLayots", "HomeWorkLayots\HomeWorkLayots.csproj", "{0153DCFF-E4EE-4B50-80F9-222B5AD5B84A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWorkLayots.Data", "HomeWorkLayots.Data\HomeWorkLayots.Data.csproj", "{DFD8DB1C-09AB-4299-B342-E1658F787F0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkLayots.Data", "HomeWorkLayots.Data\HomeWorkLayots.Data.csproj", "{DFD8DB1C-09AB-4299-B342-E1658F787F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWorkLayots.Business", "HomeWorkLayots.Business\HomeWorkLayots.Business.csproj", "{AB6B227F-C139-496C-91BD-8964E20B13AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFD8DB1C-09AB-4299-B342-E1658F787F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6B227F-C139-496C-91BD-8964E20B13AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6B227F-C139-496C-91BD-8964E20B13AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6B227F-C139-496C-91BD-8964E20B13AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6B227F-C139-496C-91BD-8964E20B13AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
